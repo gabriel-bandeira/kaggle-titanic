@@ -84,6 +84,8 @@ test_data = test_df.values
 print 'Training...'
 forest = RandomForestClassifier(n_estimators=100)
 forest = forest.fit( train_data[0::,1::], train_data[0::,0] )
+score = forest.score( train_data[0::,1::], train_data[0::,0] )
+print 'score = ' + str(score)
 
 print 'Predicting...'
 output = forest.predict(test_data).astype(int)
